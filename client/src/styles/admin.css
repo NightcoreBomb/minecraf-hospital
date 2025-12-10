@@ -1,0 +1,47 @@
+.admin-container {
+    padding: 20px;
+    font-family: "Minecraft 1.1";
+}
+
+.potion-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.potion {
+    text-align: center;
+}
+
+.potion img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.potion button {
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.password-section {
+    text-align: center;
+}
+
+.password-section input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.password-section button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.password-section p {
+    margin-top: 10px;
+    color: green;
+}
