@@ -1,0 +1,204 @@
+.flexbox{
+    height: 600px;
+    font-size: 50px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family: "Minecraft 1.1";
+    padding-top: 25px;
+    font-weight: bold;
+    background-image: url('https://media.forgecdn.net/attachments/243/636/theate-pack-image-1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*background-size: 100% 100%;*/
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.flexbox a img {
+    top: 50px;
+    width: 70px; height: 70px;
+    padding-top: 19px;
+    margin-top: 5px;
+    border-radius: 30px;
+    /*border: 4px solid #1371dd;*/
+}
+
+.flexbox a{
+    background: white;
+    border-radius: 40px;
+    padding-inline: 30px;
+    padding-bottom: 15px;
+}
+
+.flexbox h1{
+    background: #ffffff;
+    border: solid black;
+    border-radius: 40px;
+    padding-inline: 30px;
+    margin-left: 800px;
+    margin-top: -1px;
+    max-width: 700px;
+    padding-bottom: 15px;
+}
+
+
+.button-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+.bytpuck{
+    width: 50px;
+    height: 50px;
+    padding-bottom: 10px;
+}
+.main_menu{
+    font-family: "Minecraft 1.1";
+    margin-top: 10px;
+}
+.main_menu a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+}
+.main_menu a:hover{
+    color: #1371dd;
+}
+
+.scale{
+    color: black;
+    transition: font-size 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.scale:hover{
+    font-size: 150%;
+    color: white;
+}
+
+.main_text{
+    font-size: 50px;
+    font-family: "Minecraft 1.1";
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 30px;
+    /*margin-top: 30px;*/
+    margin-bottom: 50px;
+}
+
+.box1{
+    display: flex;
+    align-content: center;
+    text-align: center;
+    justify-content: space-around;
+    font-family: "Minecraft 1.1";
+    height: 300px;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: -100px;
+
+}
+.box1 img{
+    width: 500px;
+    height: 400px;
+    margin: 40px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.big_text{
+    margin-top: 80px;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.content {
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.box1 img:hover{
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.mid_text{
+    font-size: 20px;
+    max-width: 500px;
+    padding-top: 10px;
+    margin: 0 auto;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-family: "Minecraft 1.1" !important;
+    /*margin-bottom: -30px;*/
+}
+
+select,
+button {
+    font-family: "Minecraft 1.1", sans-serif !important;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 20px;
+    border: 2px solid #000;
+    background: linear-gradient(to bottom, #e0e0e0, #a0a0a0);
+    color: #000;
+    text-shadow: 1px 1px #fff;
+    cursor: pointer;
+    outline: none;
+    box-shadow: inset 0 0 0 2px #555;
+    transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+button:hover,
+select:hover {
+    background: linear-gradient(to bottom, #ffffff, #bbbbbb);
+    box-shadow: inset 0 0 0 2px #000;
+}
+
+button:active,
+select:active {
+    background: linear-gradient(to bottom, #999999, #777777);
+    box-shadow: inset 0 0 0 2px #222;
+}
+
+
+input {
+    font-family: "Minecraft 1.1", sans-serif !important;
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 300px;
+    text-align: center;
+    background-color: #d8a35d;
+    border: 3px solid #5c3b1e;
+    box-shadow: inset 0 0 0 2px #a97442;
+    color: #000;
+    outline: none;
+    appearance: none;
+}
+
+.frame{
+    font-family: "Minecraft 1.1", sans-serif !important;
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 300px;
+    text-align: center;
+    background-color: #bbbbbb;
+    border: 3px solid #777777;
+    box-shadow: inset 0 0 0 2px #595959;
+    color: #000;
+    outline: none;
+    appearance: none;
+}

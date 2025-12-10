@@ -1,0 +1,650 @@
+/* Скидання базових відступів */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* --- ВАШ ШРИФТ ДЛЯ ВСЬОГО САЙТУ --- */
+    font-family: "Minecraft 1.1", Arial, sans-serif;
+}
+
+body {
+    /* Оригінальний колір фону */
+    background-color: #f4f4f9;
+    overflow-x: hidden;
+}
+
+.home-container {
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+/* --- НАВІГАЦІЯ --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    min-height: 70px;
+}
+
+.nav-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* Бургер меню (приховане на ПК) */
+.burger-btn {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.burger-btn span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+/* --- ЗАГОЛОВКИ (ЦЕНТРУВАННЯ) --- */
+.hero-header {
+    text-align: center; /* Це гарантує, що текст по центру */
+    margin-top: 40px;
+    padding: 0 10px;
+}
+
+.hero-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.sub-header {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0 60px 0;
+    color: #555;
+}
+
+/* --- БЛОКИ КОНТЕНТУ (Щоб не накладалися) --- */
+.feature-row {
+    display: flex;
+    align-items: center;      /* Центрування по вертикалі */
+    justify-content: center;  /* Центрування по горизонталі */
+    gap: 60px;                /* Відстань між картинкою і текстом */
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
+    padding: 0 20px;
+}
+
+/* Налаштування картинок, щоб вони не вилазили */
+.feature-img img {
+    border-radius: 30px;
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: block;
+}
+
+.feature-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+.feature-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.feature-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.small-note {
+    font-size: 0.9rem !important;
+    color: #777 !important;
+    font-style: italic;
+}
+
+/* --- АДАПТИВНІСТЬ (MOBILE) --- */
+@media (max-width: 900px) {
+    /* Ховаємо лого на телефоні */
+    .desktop-only {
+        display: none;
+    }
+
+    /* Показуємо кнопку меню */
+    .burger-btn {
+        display: flex;
+    }
+
+    /* Меню випадає вниз */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 100;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Адаптація блоків */
+    .feature-row {
+        flex-direction: column; /* Картинки і текст стають один під одним */
+        text-align: center;
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    /* Реверс для блоків: Картинка завжди зверху, текст знизу */
+    .feature-row.reverse {
+        flex-direction: column-reverse;
+    }
+
+    .feature-text {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .feature-img img {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+/* --- БАЗОВІ НАЛАШТУВАННЯ --- */
+* {
+    box-sizing: border-box;
+    font-family: "Minecraft 1.1", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f4f9;
+    overflow-x: hidden;
+}
+
+.home-container {
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+/* --- НАВІГАЦІЯ --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-height: 70px;
+}
+
+.bytpuck { height: 50px; width: auto; }
+
+.nav-links { display: flex; gap: 20px; }
+.nav-links a { text-decoration: none; color: #333; font-weight: bold; padding: 10px; transition: color 0.3s; }
+.nav-links a:hover { color: #007bff; }
+
+.burger-btn { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+.burger-btn span { width: 25px; height: 3px; background-color: #333; }
+
+/* --- СТОРІНКА СПАВНУ --- */
+.spawn-page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spawn-header-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.spawn-title h1 {
+    font-size: 3rem;
+    color: #333;
+    border: 4px solid #fff;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.spawn-map img {
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 4px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.spawn-interaction-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px; /* Збільшив відстань між інструкцією і формою */
+    width: 100%;
+    align-items: center; /* Вирівнювання по центру по вертикалі */
+}
+
+/* --- ІНСТРУКЦІЯ (Повертаємо "старий" стиль) --- */
+.spawn-instructions {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+
+    /* Прибираємо картковий стиль */
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+
+    /* Текстові стилі як в оригіналі (mid_text) */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px; /* Відстань між рядками тексту */
+}
+
+.spawn-instructions p {
+    font-size: 1.3rem; /* Розмір як у mid_text */
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* --- ПАНЕЛЬ КЕРУВАННЯ --- */
+.spawn-form-box {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+}
+
+.centered-text {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.input-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.minecraft-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Горизонтальний ряд для кнопки і селекту */
+.form-row-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px; /* Відступ між елементами */
+}
+
+.minecraft-select {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.minecraft-btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-bottom: 4px solid #1e7e34;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.minecraft-btn:active {
+    transform: translateY(4px);
+    border-bottom: none;
+    margin-bottom: 4px;
+}
+
+/* --- МОБІЛЬНА АДАПТАЦІЯ --- */
+@media (max-width: 900px) {
+    .desktop-only { display: none; }
+    .burger-btn { display: flex; }
+
+    .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; width: 100%;
+        background-color: #fff; flex-direction: column; align-items: center;
+        padding: 20px 0; z-index: 100; box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    .nav-links.active { display: flex; }
+
+    .spawn-header-section { flex-direction: column; }
+    .spawn-interaction-area { flex-direction: column; align-items: center; gap: 40px; }
+
+    /* На телефоні інструкція теж центрується, бо так красивіше, коли колонка */
+    .spawn-instructions {
+        text-align: center;
+        align-items: center;
+    }
+
+    .form-row-horizontal { flex-direction: column; width: 100%; gap: 20px; }
+    .minecraft-btn { width: 100%; }
+}
+
+/* --- СТИЛІ ДЛЯ СТОРІНКИ РЕЦЕПТІВ --- */
+/* (Більшість стилів береться з класів .spawn-...) */
+
+.potion-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Блок інгредієнтів */
+.ingredients-box {
+    background-color: #f9f9f9;
+    border: 2px dashed #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left; /* Список краще виглядає зліва */
+}
+
+.ingredients-box h4 {
+    margin-bottom: 10px;
+    color: #555;
+    text-align: center;
+}
+
+.ingredients-box ul {
+    list-style-position: inside; /* Маркери всередині блоку */
+    padding-left: 10px;
+}
+
+.ingredients-box li {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+/* Блок кроків */
+.steps-box {
+    width: 100%;
+    min-height: 100px; /* Щоб блок не скакав при зміні тексту */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.step-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+}
+
+/* Анімація появи рецепту */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- СТИЛІ ДЛЯ РЕЗУЛЬТАТІВ ПОШУКУ --- */
+
+.result-frame {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border: 2px dashed #888;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center; /* Центруємо текст всередині */
+    animation: fadeIn 0.3s ease;
+}
+
+.result-frame.error {
+    background-color: #ffe6e6; /* Червонуватий фон для помилок */
+    border-color: #ff4444;
+    color: #cc0000;
+}
+
+.result-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+/* Інші елементи (h2, input, btn) вже стилізовані
+   через глобальні класи .spawn-form-box, .minecraft-btn тощо */
+
+
+/* --- СТИЛІ ДЛЯ МАГАЗИНУ (SHOP) --- */
+
+/* Контейнер для блоку вводу нікнейму */
+.shop-controls-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.shop-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Трохи зменшив відступ, щоб влізло більше карток */
+    width: 100%;
+    padding-bottom: 50px;
+}/* --- РОЗШИРЕННЯ СІТКИ МАГАЗИНУ --- */
+
+/* Клас-модифікатор для розширення контейнера на сторінці магазину */
+.spawn-page-content.shop-wide {
+    max-width: 95%; /* Використовуємо 95% ширини екрану замість фіксованих 1200px */
+    padding: 20px 40px; /* Трохи більше відступів з боків */
+}
+
+.shop-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Трохи зменшив відступ, щоб влізло більше карток */
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.shop-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 15px; /* Трохи компактніші відступи всередині */
+    width: 260px;  /* Зменшив ширину з 280px до 260px, щоб більше вміщалось в ряд */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+    border: 2px solid transparent;
+}
+
+/* Решта стилів залишається такою ж */
+.shop-card:hover {
+    transform: translateY(-5px);
+    border-color: #007bff;
+}
+
+.shop-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.1rem; /* Трохи менший шрифт заголовка */
+    text-align: center;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-card-info {
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+/* Картка товару */
+.shop-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    width: 280px; /* Фіксована ширина картки */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.shop-card:hover {
+    transform: translateY(-5px); /* Ефект підняття при наведенні */
+    border-color: #007bff;
+}
+
+.shop-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2rem;
+    text-align: center;
+    min-height: 50px; /* Щоб заголовки були на одному рівні */
+    display: flex;
+    align-items: center;
+}
+
+.shop-card-info {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.shop-card-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Спеціальний стиль для кнопки покупки */
+.shop-btn {
+    width: 100%;
+    background-color: #ff9800; /* Помаранчевий колір для покупок */
+    border-bottom: 4px solid #e65100;
+}
+
+.shop-btn:disabled {
+    background-color: #ccc;
+    border-bottom: 4px solid #999;
+    cursor: not-allowed;
+}
+
+.shop-btn:active {
+    border-bottom: none;
+}
+
+/* --- АДАПТИВНІСТЬ МАГАЗИНУ --- */
+@media (max-width: 768px) {
+    .shop-grid {
+        gap: 20px;
+    }
+
+    .shop-card {
+        width: 100%; /* На телефоні картка займає всю ширину */
+        max-width: 350px;
+    }
+}
